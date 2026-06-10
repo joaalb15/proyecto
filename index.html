@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artisan Bakeries - Comparador de Precios</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#54433a",
+                        "on-primary-fixed-variant": "#753401",
+                        "outline": "#877369",
+                        "surface-container-high": "#ecabe",
+                        "secondary": "#6d5c3a",
+                        "on-surface": "#1d1d03",
+                        "inverse-primary": "#ffb68c",
+                        "background": "#fefccf",
+                        "on-tertiary-container": "#ffc2a0",
+                        "outline-variant": "#dac2b6",
+                        "tertiary-container": "#914100",
+                        "surface-variant": "#e6e5b9",
+                        "on-background": "#1d1d03",
+                        "tertiary": "#6d2f00",
+                        "on-secondary-fixed": "#251a01",
+                        "surface-container-low": "#f8f6c9",
+                        "on-secondary-fixed-variant": "#544525",
+                        "surface": "#fefccf",
+                        "secondary-container": "#f4ddb2",
+                        "surface-tint": "#934b19",
+                        "secondary-fixed-dim": "#dac49b",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#71613e",
+                        "surface-container": "#f2f0c4",
+                        "inverse-surface": "#323214",
+                        "surface-bright": "#fefccf",
+                        "primary-fixed-dim": "#ffb68c",
+                        "primary": "#6c2f00",
+                        "surface-dim": "#dedcb1",
+                        "inverse-on-surface": "#f5f3c7",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#ffc29f",
+                        "primary-container": "#8b4513",
+                        "tertiary-fixed": "#ffdbc9",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e6e5b9",
+                        "primary-fixed": "#ffdbc9",
+                        "on-tertiary-fixed-variant": "#763400",
+                        "on-tertiary-fixed": "#321200",
+                        "tertiary-fixed-dim": "#ffb68d",
+                        "on-primary-fixed": "#321200",
+                        "secondary-fixed": "#f7e0b5",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Literata"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Literata"],
+                        "headline-lg": ["Literata"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fefccf; /* Cream base */
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(254, 252, 207, 0) 0%, rgba(242, 240, 196, 1) 100%);
+        }
+        .bakery-card-shadow {
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-md py-sm bg-surface shadow-sm">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="bakery_dining">bakery_dining</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Artisan Bakeries</h1>
+</div>
+<div class="hidden md:flex gap-md">
+<a class="font-label-md text-label-md text-primary hover:bg-surface-container-low transition-colors px-4 py-2 rounded-full" href="#">Inicio</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors px-4 py-2 rounded-full" href="#">Panaderías</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors px-4 py-2 rounded-full" href="#">Ofertas</a>
+</div>
+</header>
+<main class="pt-24 pb-32 max-w-screen-xl mx-auto px-gutter">
+<!-- Hero Section -->
+<section class="text-center mb-lg hero-gradient py-lg rounded-xl">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-sm leading-tight">Encuentra el mejor precio para tu pan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                Comparamos las mejores panaderías artesanales de la zona para que disfrutes de la mayor calidad al precio más justo.
+            </p>
+</section>
+<!-- Comparison Tool Form -->
+<section class="max-w-md mx-auto mb-xl">
+<div class="bg-surface-container-lowest p-md rounded-xl bakery-card-shadow border border-outline-variant">
+<div class="flex flex-col gap-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-xs" for="quantity">¿Cuántos panes vas a comprar?</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="shopping_basket">shopping_basket</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" id="quantity" min="1" placeholder="Ej: 12" type="number"/>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-4 rounded-xl font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all shadow-md flex items-center justify-center gap-2" id="calculateBtn">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+                        Calcular Precios
+                    </button>
+</div>
+</div>
+</section>
+<!-- Results Section -->
+<section class="hidden animate-in fade-in slide-in-from-bottom-4 duration-500" id="resultsSection">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Winner Card -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-low p-md rounded-xl border-2 border-secondary-container bakery-card-shadow relative overflow-hidden" id="winnerCard">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary px-4 py-1 rounded-bl-xl font-label-caps text-label-caps">
+                            ¡GANADORA!
+                        </div>
+<h3 class="font-label-caps text-label-caps text-secondary mb-xs">MEJOR OPCIÓN</h3>
+<div class="font-headline-lg text-headline-lg text-primary mb-xs" id="winnerName">Cargando...</div>
+<div class="flex items-baseline gap-2 mb-md">
+<span class="font-headline-xl text-headline-xl text-primary" id="winnerTotal">$0.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">total estimado</span>
+</div>
+<div class="p-sm bg-white/50 rounded-lg border border-outline-variant/30 backdrop-blur-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant italic" id="winnerNote">
+                                Estás ahorrando gracias a la tarifa de mayoreo.
+                            </p>
+</div>
+</div>
+<div class="mt-md">
+<img alt="Interior de una panadería rústica con panes recién horneados" class="w-full h-48 object-cover rounded-xl shadow-sm" data-alt="A warm, atmospheric interior of a rustic artisanal bakery. Sunlight streams through large windows, illuminating wooden shelves filled with various types of crusty sourdough breads and golden baguettes. The overall aesthetic is cozy and nourishing, utilizing a palette of warm wheat yellows, creamy whites, and deep mahogany browns. A soft-focus background shows a master baker dusting flour over a work table, evoking a sense of traditional craftsmanship and quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDds8O-pOng9mNHeZd0NYV6KkwRIESeR_jxfBct-jG_Xy219Kb1HRZRsLDiWed4I9OnjqCPA6UZPbuiz7f35hWOsyAyfBBEfJdO-9ZO4NxBNcuKqZO4y9FOA5lOjOjK4UyaDb5B7TW_Hu8gnwwq7EktRT0Qb4-kuhV8op_cgv_GA9IwQF4O38AlyPoYmLromDzHkgF4ddHc3tZw_WISmCV3JTjWuFasiOGeRAobOVM7NndzBTDNoCUa1q11F0M3m3MngZ4qJW30Mx1m"/>
+</div>
+</div>
+<!-- Comparison Table -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl bakery-card-shadow border border-outline-variant overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant">
+<th class="px-md py-4 font-label-caps text-label-caps text-on-surface-variant">Panadería</th>
+<th class="px-md py-4 font-label-caps text-label-caps text-on-surface-variant">Precio Unit.</th>
+<th class="px-md py-4 font-label-caps text-label-caps text-on-surface-variant">Total</th>
+<th class="px-md py-4 font-label-caps text-label-caps text-on-surface-variant">Diferencia</th>
+</tr>
+</thead>
+<tbody id="comparisonList">
+<!-- Dynamic items here -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-base bg-surface shadow-[0_-4px_12px_rgba(139,69,19,0.08)] border-t border-outline-variant rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span class="font-label-md text-label-md">Comparar</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md">Panaderías</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="savings">savings</span>
+<span class="font-label-md text-label-md">Ahorros</span>
+</button>
+</nav>
+<script>
+        // Data and Logic for Bakeries
+        const bakeries = [
+            { name: "Panadería El Trigal", retail: 0.50, wholesale: 0.40, img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" },
+            { name: "Horno de Oro", retail: 0.55, wholesale: 0.35, img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=400" },
+            { name: "La Espiga Artesana", retail: 0.48, wholesale: 0.45, img: "https://images.unsplash.com/photo-1486887396153-fa4163ad3c9a?auto=format&fit=crop&q=80&w=400" }
+        ];
+
+        const quantityInput = document.getElementById('quantity');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultsSection = document.getElementById('resultsSection');
+        const winnerName = document.getElementById('winnerName');
+        const winnerTotal = document.getElementById('winnerTotal');
+        const winnerNote = document.getElementById('winnerNote');
+        const comparisonList = document.getElementById('comparisonList');
+
+        /**
+         * Main calculation function
+         */
+        function handleCalculation() {
+            const qty = parseInt(quantityInput.value);
+            if (isNaN(qty) || qty <= 0) {
+                alert("Por favor ingresa una cantidad válida.");
+                return;
+            }
+
+            // Calculate totals
+            const calculatedResults = bakeries.map(bakery => {
+                const unitPrice = qty >= 10 ? bakery.wholesale : bakery.retail;
+                return {
+                    ...bakery,
+                    appliedPrice: unitPrice,
+                    total: unitPrice * qty,
+                    isWholesale: qty >= 10
+                };
+            });
+
+            // Sort by price ascending
+            calculatedResults.sort((a, b) => a.total - b.total);
+
+            const winner = calculatedResults[0];
+            const loser = calculatedResults[calculatedResults.length - 1];
+
+            // Render Winner
+            winnerName.textContent = winner.name;
+            winnerTotal.textContent = `$${winner.total.toFixed(2)}`;
+            winnerNote.textContent = winner.isWholesale 
+                ? "¡Gran compra! Estás aprovechando el precio de mayoreo." 
+                : "Aprovecha el precio de venta al público por unidad.";
+
+            // Render Comparison Table
+            comparisonList.innerHTML = '';
+            calculatedResults.forEach((res, index) => {
+                const diff = res.total - winner.total;
+                const tr = document.createElement('tr');
+                tr.className = `border-b border-outline-variant/50 hover:bg-surface-container-low transition-colors ${index === 0 ? 'bg-secondary-container/10' : ''}`;
+                
+                tr.innerHTML = `
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-sm">
+                            <span class="material-symbols-outlined text-primary text-sm" data-icon="store">store</span>
+                            <span class="font-body-md text-body-md font-semibold">${res.name}</span>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 font-body-md text-body-md text-on-surface-variant">$${res.appliedPrice.toFixed(2)}</td>
+                    <td class="px-md py-4 font-body-md text-body-md font-bold text-primary">$${res.total.toFixed(2)}</td>
+                    <td class="px-md py-4 font-label-md text-label-md">
+                        ${index === 0 
+                            ? '<span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Mejor</span>' 
+                            : `<span class="text-on-surface-variant">+ $${diff.toFixed(2)}</span>`}
+                    </td>
+                `;
+                comparisonList.appendChild(tr);
+            });
+
+            // Show results
+            resultsSection.classList.remove('hidden');
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        calculateBtn.addEventListener('click', handleCalculation);
+
+        // Add Enter key listener
+        quantityInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleCalculation();
+        });
+    </script>
+</body></html>
