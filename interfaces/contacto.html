@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ArtPanPrice | Contacto</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c0c9be",
+                        "on-secondary-container": "#afb8ad",
+                        "on-error": "#690005",
+                        "outline-variant": "#5b403f",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#ff535b",
+                        "tertiary-fixed-dim": "#b0c7f1",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "inverse-primary": "#bb152c",
+                        "secondary-fixed": "#dce5d9",
+                        "on-primary-container": "#5b000e",
+                        "on-primary-fixed": "#410007",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary": "#183153",
+                        "tertiary": "#b0c7f1",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#ffb3b1",
+                        "tertiary-container": "#7b92b9",
+                        "secondary": "#c0c9be",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-primary": "#680011",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "primary-fixed": "#ffdad8",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-container": "#102a4b",
+                        "secondary-container": "#404940",
+                        "surface-tint": "#ffb3b1",
+                        "on-surface-variant": "#e4bebc",
+                        "on-secondary-fixed-variant": "#404940",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#92001c",
+                        "surface-dim": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "outline": "#ab8987",
+                        "on-tertiary-fixed-variant": "#30476a",
+                        "on-secondary": "#2a322b",
+                        "surface-variant": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#001b3c",
+                        "on-secondary-fixed": "#161d16",
+                        "custom-red": "#e63946"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "section-gap": "160px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Poppins"],
+                        "body-lg": ["Poppins"],
+                        "body-md": ["Poppins"],
+                        "display-lg": ["Poppins"],
+                        "label-caps": ["Poppins"],
+                        "display-xl": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "120%", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "120%", "fontWeight": "600"}],
+                        "body-lg": ["20px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "100%", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Poppins', sans-serif; }
+        .label-caps { font-family: 'Poppins', sans-serif; text-transform: uppercase; }
+        
+        .avant-garde-card {
+            background-color: #1c1b1b;
+            border: 1px solid #353534;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .avant-garde-card:hover {
+            border-color: #e63946;
+            background-color: #201f1f;
+        }
+        .red-gradient-btn {
+            background: linear-gradient(135deg, #e63946 0%, #b21f2d 100%);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        .red-gradient-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .red-gradient-btn:active {
+            transform: translateY(0);
+        }
+        .back-btn {
+            border: 1px solid #353534;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            border-color: #e63946;
+            color: #e63946;
+            background-color: rgba(230, 57, 70, 0.05);
+        }
+        .input-field {
+            background-color: #131313;
+            border: 1px solid #353534;
+            color: #e5e2e1;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #e63946;
+            outline: none;
+            box-shadow: 0 0 10px rgba(230, 57, 70, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen text-on-background">
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <img alt="Artisanal bakery background" class="w-full h-full object-cover opacity-20 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtoefDPEPagsZNodvaA_bQb3imZIQRfHD51L7Sb0jdM00h6jSQzP-cC62DRpF1RWXn3iLwP8TIzJ7CGwnFWDEjiBYPlbvy4e9_DWcCADQEC3ZuD0gdf41yE2WD2lUw0Y4GuxHNJC5jZTcLpw0i0aIKvmJRICFQgCL3-DOOQo0tFxkktzZNgJpc8BCUkhTllPKJOhVRNgHiYvyo9ObzuHUojnep3Qc052_0hn_iWVs77Kq1EBvb43HmR1-av-s0NO5d-s8k4VdBTOvg"/>
+        <div class="absolute inset-0 bg-background/80"></div>
+    </div>
+
+    <!-- Barra de Navegación -->
+    <header class="bg-surface-container-lowest sticky top-0 z-50 border-b border-surface-container-highest">
+        <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-[1440px] mx-auto gap-4">
+            <div class="flex items-center gap-3">
+                <img src="favicon.svg" class="h-8 w-8 md:h-10 md:w-10" alt="APP Logo"/>
+                <div class="font-headline-lg text-2xl md:text-3xl font-bold text-custom-red tracking-tighter">
+                    <a href="index2.html">ArtPanPrice</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <a class="back-btn flex items-center gap-2 px-5 py-2.5 rounded-none font-label-caps text-label-caps text-on-surface" href="index2.html">
+                    <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Volver al Inicio
+                </a>
+                <img src="favicon.svg" class="h-8 w-8 md:h-10 md:w-10" alt="APP Logo"/>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-[1000px] mx-auto px-margin-mobile py-20">
+        <!-- Sección de Título -->
+        <section class="text-center mb-16">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <span class="w-12 h-[1px] bg-custom-red"></span>
+                <span class="font-label-caps text-label-caps text-custom-red">SOPORTE Y ASOCIACIONES</span>
+                <span class="w-12 h-[1px] bg-custom-red"></span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-on-surface leading-none mb-6">Contacto</h1>
+            <p class="text-body-md text-on-surface-variant max-w-xl mx-auto opacity-80">
+                ¿Tienes alguna panadería en Barinas y deseas integrarla al comparador? Escríbenos y trabajemos juntos en la transparencia comercial.
+            </p>
+        </section>
+
+        <!-- Contenedor Principal (Formulario + Información) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Formulario de Contacto -->
+            <section class="lg:col-span-7">
+                <div class="avant-garde-card p-8 md:p-12 rounded-xl">
+                    <h2 class="font-display text-2xl text-on-surface mb-8 font-bold">Enviar Mensaje</h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block font-label-caps text-[10px] text-on-surface-variant mb-2" for="name">Nombre Completo</label>
+                            <input class="w-full input-field px-4 py-3.5 rounded-none text-body-md" id="name" placeholder="Ej: Rafael Delgado" required type="text"/>
+                        </div>
+
+                        <div>
+                            <label class="block font-label-caps text-[10px] text-on-surface-variant mb-2" for="email">Correo Electrónico</label>
+                            <input class="w-full input-field px-4 py-3.5 rounded-none text-body-md" id="email" placeholder="Ej: rafael@correo.com" required type="email"/>
+                        </div>
+
+                        <div>
+                            <label class="block font-label-caps text-[10px] text-on-surface-variant mb-2" for="subject">Asunto</label>
+                            <input class="w-full input-field px-4 py-3.5 rounded-none text-body-md" id="subject" placeholder="Ej: Registrar nueva panadería" required type="text"/>
+                        </div>
+
+                        <div>
+                            <label class="block font-label-caps text-[10px] text-on-surface-variant mb-2" for="message">Mensaje</label>
+                            <textarea class="w-full input-field px-4 py-3.5 rounded-none text-body-md h-32 resize-none" id="message" placeholder="Describe tu propuesta o comentario..." required></textarea>
+                        </div>
+
+                        <button class="red-gradient-btn w-full text-white py-4 px-10 font-label-caps text-label-caps flex items-center justify-center gap-3 tracking-widest" type="submit">
+                            <span class="material-symbols-outlined text-[18px]">send</span>
+                            ENVIAR MENSAJE
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de éxito interactivo -->
+                    <div id="successState" class="hidden text-center py-10 space-y-6">
+                        <span class="material-symbols-outlined text-6xl text-custom-red animate-bounce">check_circle</span>
+                        <h3 class="font-display text-2xl font-bold text-on-surface">¡Mensaje Enviado con Éxito!</h3>
+                        <p class="text-body-md text-on-surface-variant max-w-sm mx-auto opacity-80">
+                            Agradecemos tu interés. Nuestro equipo en Barinas revisará la información y te responderá a la brevedad.
+                        </p>
+                        <button class="back-btn px-6 py-3 font-label-caps text-label-caps text-on-surface" id="btnReset">
+                            Enviar otro mensaje
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Información Lateral -->
+            <section class="lg:col-span-5 flex flex-col gap-gutter">
+                <!-- Tarjeta de Canales -->
+                <div class="avant-garde-card p-8 rounded-xl flex-1 flex flex-col justify-center">
+                    <h3 class="font-label-caps text-label-caps text-custom-red mb-6 tracking-wider">Canales Directos</h3>
+                    
+                    <div class="space-y-6 text-on-surface-variant text-body-md">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-custom-red" data-icon="mail">mail</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface">Correo Electrónico</h4>
+                                <p class="opacity-80">contacto@artpanprice.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-custom-red" data-icon="location_on">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface">Ubicación</h4>
+                                <p class="opacity-80">Barinas, Estado Barinas, Venezuela.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-custom-red" data-icon="schedule">schedule</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface">Atención al Aliado</h4>
+                                <p class="opacity-80">Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Filosofía -->
+                <div class="avant-garde-card p-8 rounded-xl border border-custom-red/30 bg-custom-red/5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-custom-red">local_dining</span>
+                        <h4 class="font-display text-lg font-bold text-on-surface">Únete a la Red</h4>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant opacity-80 leading-relaxed">
+                        Al registrar tu panadería, no solo obtienes visibilidad frente a compradores de volumen, sino que también contribuyes al fortalecimiento del mercado artesanal y del consumo ético y de calidad.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-surface-container-lowest border-t border-surface-container-highest py-12">
+        <div class="max-w-[1200px] mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline-lg text-xl text-custom-red">ArtPanPrice</div>
+            <p class="font-label-caps text-[10px] text-on-surface-variant opacity-40">
+                © 2026 Joann, Rafael, Sebastian.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const successState = document.getElementById('successState');
+        const btnReset = document.getElementById('btnReset');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simular envío del formulario con transición
+            contactForm.classList.add('hidden');
+            successState.classList.remove('hidden');
+        });
+
+        btnReset.addEventListener('click', () => {
+            contactForm.reset();
+            successState.classList.add('hidden');
+            contactForm.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
